@@ -31,7 +31,7 @@
                         <div class="col-lg-7 col-md-6 col-sm-12 mb-3 hover-zoom">
                             <h3><%= menu[i].title %></h3>
                             <p>
-                                <%= menu[i].details %>
+                                <%= menu[i].details.substring(0,110) %>. . .
                             </p>
                             <p class="text-muted">
                                 Posted By <%= menu[i].userid.username %>
