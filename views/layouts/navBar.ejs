@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top brown-nav">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="/assets/navLogo.png" height="60" width="60" alt="nav logo" />
+        </a>
+        <button
+                data-mdb-collapse-init
+                class="navbar-toggler"
+                type="button"
+                data-mdb-target="#navbarText"
+                aria-controls="navbarText"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/menu">Our Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact">Contact</a>
+                </li>
+                <% if(loggedIn) { %>
+                    <!-- Dropdown -->
+                    <li class="nav-item dropdown">
+                        <a
+                                data-mdb-dropdown-init
+                                class="nav-link dropdown-toggle"
+                                href="#"
+                                id="navbarDropdownMenuLink"
+                                role="button"
+                                aria-expanded="false"
+                        >
+                            Dropdown link
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li>
+                                <a class="dropdown-item" href="/newMenuItem">New Item</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/newPost">New Post</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="/logout">Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                <% } %>
+            </ul>
+            <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+                <% if(!loggedIn) { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Member Login</a>
+                    </li>
+                <% } else { %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/logout">Logout</a>
+                    </li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</nav>

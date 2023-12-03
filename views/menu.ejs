@@ -1,0 +1,52 @@
+<!doctype HTML>
+<html lang="en">
+<%- include('layouts/header') -%>
+<body>
+<%- include('layouts/navBar') -%>
+<!--main body-->
+<main class="container pt-4">
+    <div class="row justify-content-center align-items-center text-center d-flex mx-auto flex-center" style="margin-top: 120px; margin-bottom: 70px;">
+        <% if(menu == "") { %>
+            <div class="col-lg-10">
+                <h1>There no menu items available yet, please check back later.</h1>
+            </div>
+        <% } else { %>
+            <div class="col-lg-12">
+                <div class="row justify-content-center text-center">
+                    <div class="col-md-10">
+                        <h2 class="display-4 mb-3">Shared Recipes</h2>
+                        <p class="mb-5 lead pb-3">Browse Our Menu For THe Latest Drinks & Food.</p>
+
+                    </div>
+                    <hr class="my-4" />
+                    <% for(i=0; i < menu.length; i++) { %>
+                        <div class="col-lg-5 col-md-6 col-sm-12 mb-3 hover-zoom">
+                            <a href="/singleMenu/<%= menu[i]._id %>">
+                                <img src="<%= menu[i].image %>"
+                                     class="w-50"
+                                     alt="<%= menu[i].title %>"
+                                />
+                            </a>
+                        </div>
+                        <div class="col-lg-7 col-md-6 col-sm-12 mb-3 hover-zoom">
+                            <h3><%= menu[i].title %></h3>
+                            <p>
+                                <%= menu[i].details %>
+                            </p>
+                            <p class="text-muted">
+                                Posted By <%= menu[i].userid.username %>
+                            </p>
+                        </div>
+                        <hr />
+                    <% } %>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</main>
+<!--main body-->
+<%- include('layouts/footer') -%>
+</body>
+<!--scripts-->
+<%- include('layouts/scripts') -%>
+</html>

@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
+
+.brown-nav {
+    background: rgb(78,34,3);
+    background: linear-gradient(90deg, rgba(78,34,3,1) 0%, rgba(108,69,59,1) 35%, rgba(191,132,77,1) 100%);
+}
+html {
+    scroll-behavior: smooth;
+}
+.home-bg {
+    background: url('/assets/home-Bg.jpg')
+    no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 90vh;
+}
+.btn-brown {
+    background: rgb(126,74,38);
+    background: linear-gradient(90deg, rgba(126,74,38,1) 0%, rgba(185,130,75,1) 35%, rgba(195,173,153,1) 100%);
+}
+.btn-outline-brown {
+    border: 2px solid saddlebrown;
+    background-color: white;
+    color: brown;
+}
+
+.btn-outline-brown:hover {
+    background: rgb(126,74,38);
+    background: linear-gradient(90deg, rgba(126,74,38,1) 0%, rgba(185,130,75,1) 35%, rgba(195,173,153,1) 100%);
+    color: white;
+}
+
+.banner-bg {
+    background: rgb(105,45,5);
+    background: linear-gradient(90deg, rgba(105,45,5,1) 0%, rgba(97,61,26,1) 35%, rgba(142,116,93,1) 100%);
+    width: 100%;
+}
+.banner {
+    background: url('https://images.pexels.com/photos/1235717/pexels-photo-1235717.jpeg?cs=srgb&dl=dawn-caffeine-coffee-1235717.jpg&fm=jpg')
+    no-repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding: 30px;
+}
+.user-bg {
+    background: url('https://cff2.earth.com/uploads/2018/08/31205001/Growing-research-finds-that-coffee-drinkers-live-longer-lives.jpg')
+    no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.img-max {
+    height: 170px;
+    width: 240px;
+}
+@media(max-width: 767px) {
+    .img-max {
+        width: 100%;
+        height: 300px;
+    }
+}
+
+.section-title {
+    font-family: 'Ephesis', cursive;
+    font-size: 3.5rem;
+}

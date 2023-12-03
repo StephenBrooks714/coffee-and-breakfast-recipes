@@ -1,0 +1,95 @@
+<!--Section: Content-->
+<section class="px-md-5 mx-md-5 text-center text-lg-left dark-grey-text">
+
+    <!--Grid row-->
+    <div class="row">
+
+        <!--Grid column-->
+        <div class="col-lg-5 col-md-12 mb-0 mb-md-0">
+
+            <h1 class="font-weight-bold">Contact Us</h1>
+
+            <p class="text-muted">
+                This messaging form is secure with our own custom-built code, and your information is never shared. We only use it for communication
+                to further assist you in your web design needs.
+            </p>
+
+            <p><span class="font-weight-bold mr-2">Support:</span>
+                <a href="mailto:stephenbrooks714@gmail.com">stephenbrooks714@gmail.com</a>
+            </p>
+            <p><span class="font-weight-bold mr-2">Phone:</span>
+                <a href="tel:580-309-0236">580-309-0236</a>
+            </p>
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-7 col-md-12 mb-4 mb-md-0">
+
+            <form action="/send/form" method="post" enctype="multipart/form-data">
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+
+                        <!-- Material outline input -->
+                        <div class="md-form md-outline mb-0">
+                            <input type="text" name="fName" id="form-first-name" class="form-control">
+                            <label for="form-first-name">First name</label>
+                        </div>
+
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+
+                        <!-- Material outline input -->
+                        <div class="md-form md-outline mb-0">
+                            <input type="text" name="lName" id="form-last-name" class="form-control">
+                            <label for="form-last-name">Last name</label>
+                        </div>
+
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+                <!-- Material outline input -->
+                <div class="md-form md-outline mt-3">
+                    <input type="email" name="from" id="form-email" class="form-control">
+                    <label for="form-email">E-mail</label>
+                </div>
+
+                <!-- Material outline input -->
+                <div class="md-form md-outline">
+                    <input type="text" name="subject" id="form-subject" class="form-control">
+                    <label for="form-subject">Subject</label>
+                </div>
+
+                <!--Material textarea-->
+                <div class="md-form md-outline mb-3">
+                    <textarea id="form-message" name="text" class="md-textarea form-control" rows="3"></textarea>
+                    <label for="form-message">How we can help?</label>
+                </div>
+
+                <button type="submit" class="btn btn-info btn-sm ml-0">Submit<i class="far fa-paper-plane ml-2"></i></button>
+
+            </form>
+        </div>
+        <!--Grid column-->
+
+    </div>
+    <!--Grid row-->
+    <script>
+        let form = document.getElementsByTagName("form")[0];
+        form.addEventListener("submit", () => {
+            alert("Message Sent!!!");
+        });
+    </script>
+
+</section>
+<!--Section: Content-->

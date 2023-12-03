@@ -1,0 +1,55 @@
+<div class="container mb-5 pb-5">
+    <div class="row">
+        <% if(blogs == "") { %>
+            <div class="col-lg-4 col-md-5 mb-5">
+                <a href="/" class="hover-zoom">
+                    <img src="https://theharmonystudios.com/wp-content/uploads/2017/05/COFFEEPOST-600x315-cropped.png"
+                         class="img-thumbnail"
+                         loading="lazy"
+                         alt="blog section"
+                    />
+                </a>
+            </div>
+            <div class="col-lg-8 col-md-7 mb-5">
+                <h6 class="h1">Blog Section</h6>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A debitis distinctio molestiae nam non. Consequatur consequuntur doloribus eveniet nobis similique veritatis! At debitis dolor eum ipsa qui temporibus veritatis voluptates. . .
+                </p>
+            </div>
+            <div class="col-lg-4 col-md-5 mb-5">
+                <a href="/" class="hover-zoom">
+                    <img src="https://tse2.mm.bing.net/th?id=OIP.eUWfN1nSNCBGjUQmpX_1PQHaE8&pid=Api&P=0&h=220"
+                         class="img-thumbnail"
+                         loading="lazy"
+                         alt="blog section"
+                    />
+                </a>
+            </div>
+            <div class="col-lg-8 col-md-7 mb-5">
+                <h6 class="h1">Blog Section</h6>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A debitis distinctio molestiae nam non. Consequatur consequuntur doloribus eveniet nobis similique veritatis! At debitis dolor eum ipsa qui temporibus veritatis voluptates. . .
+                </p>
+            </div>
+        <% } else { %>
+            <% for(i=0; i< blogs.length; i++) { %>
+                    <div class="col-lg-4 col-md-5 mb-5">
+                        <a href="/post/<%= blogs[i]._id %>" class="hover-zoom">
+                            <img src="<%= blogs[i].image %>"
+                                 class="img-thumbnail"
+                                 loading="lazy"
+                                 alt="<%= blogs[i].title %>"
+                            />
+                        </a>
+                    </div>
+                    <div class="col-lg-8 col-md-7 mb-5">
+                        <h6 class="h2"><%= blogs[i].title %></h6>
+                        <p class="mb-4">
+                            <%= blogs[i].body.substring(0, 280) %>. . .
+                        </p>
+                        <a href="/post/<%= blogs[i]._id %>" class="btn-outline-brown btn-lg">Read Post</a>
+                    </div>
+            <% } %>
+        <% } %>
+    </div>
+</div>

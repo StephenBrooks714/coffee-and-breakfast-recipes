@@ -1,0 +1,54 @@
+<!doctype HTML>
+<html lang="en">
+<%- include('layouts/header') -%>
+<body>
+<%- include('layouts/navBar') -%>
+<!--main body-->
+<main class="container-fluid">
+    <div class="row justify-content-center align-items-center d-flex mx-auto flex-center" style="margin-top: 80px; margin-bottom: 70px;">
+        <div class="col-lg-10">
+            <div class="row justify-content-center align-items-center mt-5">
+                <div class="col-md-12 mb-4">
+                    <nav aria-label="breadcrumb mb-5">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">Home</a></li>
+                            <li class="breadcrumb-item"><a href="/menu">Menu</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><%= menu.title %></li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="col-lg-10">
+                    <h1><%= menu.title %></h1>
+                </div>
+                <div class="col-md-6 p-5">
+                    <img src="<%= menu.image %>"
+                         class="img-fluid"
+                         alt="<%= menu.title %>"
+                    />
+                    <p class="lead mt-3">
+                        <%= menu.details %>
+                    </p>
+                    <% if(loggedIn) { %>
+                        <a href="/delete/menu/<%= menu._id %>" class="btn btn-outline-warning">delete this</a>
+                    <% } %>
+                </div>
+                <div class="col-md-6 p-5">
+                    <h3>Ingredients</h3>
+                    <ul class="mb-0">
+                        <% menu.ingredients.forEach(function(ingredient){ %>
+                            <li>
+                                <p><%= ingredient %></p>
+                            </li>
+                        <% }) %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!--main body-->
+<%- include('layouts/footer') -%>
+</body>
+<!--scripts-->
+<%- include('layouts/scripts') -%>
+</html>

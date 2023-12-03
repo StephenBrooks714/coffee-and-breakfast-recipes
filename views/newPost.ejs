@@ -1,0 +1,28 @@
+<!doctype HTML>
+<html lang="en">
+<%- include('layouts/header') -%>
+<body>
+<%- include('layouts/navBar') -%>
+<!--main body-->
+<main class="container">
+    <div class="row justify-content-center align-items-center d-flex mx-auto flex-center" style="margin-top: 130px; margin-bottom: 70px;">
+        <div class="col-lg-8">
+            <h1 class="display-4 mb-4">Upload A Post Or Article</h1>
+            <form action="/store/post" method="post" enctype="multipart/form-data">
+                <label for="title" class="form-label">Post Title</label>
+                <input type="text" name="title" id="title" class="form-control mb-3" required />
+                <label for="image">Post Image</label>
+                <input type="file" name="image" id="image" class="form-control mb-3" accept="image/*" required />
+                <label for="body" class="form-label">Post Details</label>
+                <textarea name="body" id="body" class="form-control mb-3" rows="7" required spellcheck="true" minlength="300" maxlength="650"></textarea>
+                <button class="btn btn-brown text-white" type="submit">submit post</button>
+            </form>
+        </div>
+    </div>
+</main>
+<!--main body-->
+<%- include('layouts/footer') -%>
+</body>
+<!--scripts-->
+<%- include('layouts/scripts') -%>
+</html>

@@ -1,0 +1,41 @@
+<!doctype HTML>
+<html lang="en">
+<%- include('layouts/header') -%>
+<body>
+<%- include('layouts/navBar') -%>
+<!--main body-->
+<main class="container">
+    <div class="row justify-content-center align-items-center d-flex mx-auto flex-center" style="margin-top: 130px; margin-bottom: 70px;">
+        <div class="col-lg-12">
+            <nav aria-label="breadcrumb mb-5">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/blogs">All Blogs</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><%= post.title %></li>
+                </ol>
+            </nav>
+            <p class="text-center h5">
+                <strong>Posted By:</strong> <a href="mailto:<%= post.userid.email %>"><%= post.userid.fName %> <%= post.userid.lName %></a>
+            </p>
+            <p class="text-center text-muted mb-3">
+                Posted On: <%= post.datePosted.toLocaleString() %>
+            </p>
+            <div class="text-center flex-center">
+                <img src="<%= post.image %>" class="w-50" alt="<%= post.title %>" />
+            </div>
+            <h1 class="h1-responsive text-center font-weight-bold mt-3"><%= post.title %></h1>
+            <p class="lead mt-3">
+                <%= post.body %> <br>
+                <% if(loggedIn) { %>
+                    <span class="lead text-danger font-weight-bold">Delete This Post and all of its data.</span> <a href="/delete/post/<%= post._id %>" class="btn btn-md btn-outline-danger">Delete</a>
+                <% } %>
+            </p>
+        </div>
+    </div>
+</main>
+<!--main body-->
+<%- include('layouts/footer') -%>
+</body>
+<!--scripts-->
+<%- include('layouts/scripts') -%>
+</html>
